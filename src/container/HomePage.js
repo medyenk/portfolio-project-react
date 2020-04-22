@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Link } from "react-router-dom";
 
 
 
@@ -21,8 +22,8 @@ class HomePage extends Component {
                 </Container>
                 <Container fluid>
                     <Row className="justify-content-md-center">
-                        <Col md="auto"><Button>About me</Button></Col>
-                        <Col md="auto"><Button>View my work</Button></Col>
+                        <Col md="auto"><Link to ='/about' ><Button>About me</Button></Link></Col>
+                        <Col md="auto"><Link to ='/projects' ><Button>View my work</Button></Link></Col>
                     </Row>
                 </Container>
             </div>
