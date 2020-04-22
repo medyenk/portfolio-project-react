@@ -25,13 +25,14 @@ class Project extends Component {
                 isLoaded: true
               });
             }
-          ).then(console.log(this.state.projects[0]))
+          )
         };
           
 
     render() {
-        console.log(this.state.projects[0]);
+
         if(this.state.isLoaded===true){
+            console.log(this.state.projects)
         return (
             <div>
                
@@ -39,6 +40,7 @@ class Project extends Component {
                    <React.Fragment key={item.id}>
               <h1>{item.name}</h1>
               <p>{item.description}</p>
+              <a href={item.clone_url} target="_blank">Link to github</a>
               </React.Fragment>
             
           ))}  
