@@ -11,22 +11,20 @@ import Contact from './components/Contact.js';
 class App extends Component {
   
   render(){
-  
-  return (
-    <div className="App">
-      <Router>
-      <NavigationBar />
-     
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/projects" component={Project} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
-      </Router>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        <Router>
+          <NavigationBar />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/projects" component={Project} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+          </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
