@@ -7,7 +7,6 @@ import Col from 'react-bootstrap/Col'
 import './HomePage.css'
 
 
-
 class HomePage extends Component {
     
     render() {
