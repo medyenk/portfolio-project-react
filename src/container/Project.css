@@ -1,0 +1,15 @@
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h5, p {
+    color: white;
+}
+
+.outline {
+    border-radius: 5%;
+    outline: 3px solid white;
+}

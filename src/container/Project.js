@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import './Project.css'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+
 
 class Project extends Component {
     
@@ -9,42 +15,41 @@ class Project extends Component {
            isLoaded:false
         };
     }
-    // async componentDidMount(){
-    //     const response = await fetch('https://api.github.com/users/igork172/repos');
-    //     const data = await response.json();
-    //     this.setState({ projects: data});
-    //     console.log(this.state.projects)
-    // }
     componentDidMount() {
-        fetch("https://api.github.com/users/igork172/repos")
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
+        const user="igork172";
+        const git="https://api.github.com/users/";
+        const repo="/repos";
+        const url=git+user+repo;
+        fetch(url)
+        .then(res => res.json())
+        .then((result) => {
+            this.setState({
                 projects: result,
                 isLoaded: true
-              });
-            }
-          ).then(console.log(this.state.projects[0]))
-        };
+            });
+        })
+    };
           
 
     render() {
-        console.log(this.state.projects[0]);
+
         if(this.state.isLoaded===true){
-        return (
-            <div>
-               
-              {this.state.projects.map(item => (
-                   <React.Fragment key={item.id}>
-              <h1>{item.name}</h1>
-              <p>{item.description}</p>
-              </React.Fragment>
-            
-          ))}  
-          
-            </div>
-        )
+            return(
+                <Container>
+                  <Row>
+                    {this.state.projects.map(item => (
+                        <Col className="outline" xs={6} md={4}>
+                            <React.Fragment key={item.id}>
+                            <h5>{item.name}</h5>
+                            <p>Description: {item.description}</p>
+                            <a href={item.clone_url} target="_blank"><Button variant="light" >Link to repository</Button></a>
+                            <p>LOADED</p>
+                            </React.Fragment>
+                        </Col>
+                    ))}
+                  </Row>  
+                </Container>   
+            ) 
         }
         else{
             return null;
@@ -53,6 +58,3 @@ class Project extends Component {
 }
 
 export default Project
-
-//<h1>Projects</h1>
-//<h1>{this.state.projects[0].id}</h1>
