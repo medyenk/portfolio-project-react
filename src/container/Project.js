@@ -16,7 +16,7 @@ class Project extends Component {
         };
     }
     componentDidMount() {
-        const user="igork172";
+        const user="medyenk";
         const git="https://api.github.com/users/";
         const repo="/repos";
         const url=git+user+repo;
@@ -35,15 +35,15 @@ class Project extends Component {
 
         if(this.state.isLoaded===true){
             return(
-                <Container>
+                <Container fluid className="projects">
+                    <h1>Projects</h1>
                   <Row>
                     {this.state.projects.map(item => (
-                        <Col className="outline" xs={6} md={4}>
+                        <Col className="outline" md={4}> 
                             <React.Fragment key={item.id}>
                             <h5>{item.name}</h5>
                             <p>Description: {item.description}</p>
                             <a href={item.clone_url} target="_blank"><Button variant="light" >Link to repository</Button></a>
-                            <p>LOADED</p>
                             </React.Fragment>
                         </Col>
                     ))}

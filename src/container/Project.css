@@ -1,3 +1,5 @@
+
+
 .projects {
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +12,9 @@ h5, p {
 }
 
 .outline {
-    border-radius: 5%;
-    outline: 3px solid white;
+    box-shadow: 0 0 5px #ddd;
+    padding: 5px;
+    border: 10px;
+    
+    
 }
